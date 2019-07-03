@@ -99,4 +99,10 @@ fabric.properties
 
 node_modules
 
+.idea/codeStyles/
+.idea/jsLibraryMappings.xml
+.idea/js-leetcode.iml
+
+
+
 
