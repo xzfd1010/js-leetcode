@@ -98,10 +98,7 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 node_modules
-
-.idea/codeStyles/
-.idea/jsLibraryMappings.xml
-.idea/js-leetcode.iml
+.idea/*
 
 
 
