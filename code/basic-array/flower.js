@@ -61,7 +61,7 @@
 //   }
 //   return n <= max
 // }
-
+// push(0)也可以解决右边界问题
 export default function canPlaceFlowers (flowerbed, n) {
   let max = 0
   if (flowerbed.length <= 1) {
