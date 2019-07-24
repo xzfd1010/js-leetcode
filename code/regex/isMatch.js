@@ -81,8 +81,8 @@ export default function isMatch (s, p) {
       if (j === p.length) {
         ans = i === s.length
       } else {
-        let firstMatch = i < s.length && [s[i], '.'].includes(p[j])
-        if (j + 1 < p.length && p[j + 1] === '*') {
+        let firstMatch = i < s.length && (p[j] === s[i] || p[j] === '.')
+        if (p.length > j + 1 && p[j + 1] === '*') {
           ans = dp(i, j + 2) || (firstMatch && dp(i + 1, j))
         } else {
           ans = firstMatch && dp(i + 1, j + 1)
