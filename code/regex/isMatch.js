@@ -52,21 +52,46 @@
  * @param {string} p
  * @return {boolean}
  */
+// export default function isMatch (s, p) {
+//   let match = (s, p) => {
+//     // 边界情况，如果s和p都为空，说明处理结束了，返回true，否则返回false
+//     if (p.length <= 0) {
+//       return !s.length
+//     }
+//     let matched = false
+//     if (s.length > 0 && (p[0] === s[0] || p[0] === '.')) {
+//       matched = true
+//     }
+//     if (p.length > 1 && p[1] === '*') {
+//       return match(s, p.slice(2)) || (matched && match(s.slice(1), p))
+//     } else {
+//       return matched && match(s.slice(1), p.slice(1))
+//     }
+//   }
+//   return match(s, p)
+// }
+
 export default function isMatch (s, p) {
-  let match = (s, p) => {
-    // 边界情况，如果s和p都为空，说明处理结束了，返回true，否则返回false
-    if (p.length <= 0) {
-      return !s.length
+  let memo = {}
+
+  let dp = (i, j) => {
+    let key = `${i},${j}`
+    let ans = false
+    if (!(key in memo)) {
+      if (j === p.length) {
+        ans = i === s.length
+      } else {
+        let firstMatch = i < s.length && [s[i], '.'].includes(p[j])
+        if (j + 1 < p.length && p[j + 1] === '*') {
+          ans = dp(i, j + 2) || (firstMatch && dp(i + 1, j))
+        } else {
+          ans = firstMatch && dp(i + 1, j + 1)
+        }
+      }
+      memo[key] = ans
     }
-    let matched = false
-    if (s.length > 0 && (p[0] === s[0] || p[0] === '.')) {
-      matched = true
-    }
-    if (p.length > 1 && p[1] === '*') {
-      return match(s, p.slice(2)) || (matched && match(s.slice(1), p))
-    } else {
-      return matched && match(s.slice(1), p.slice(1))
-    }
+    return memo[key]
   }
-  return match(s, p)
+
+  return dp(0, 0)
 }
