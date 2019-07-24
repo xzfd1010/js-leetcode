@@ -25,7 +25,7 @@
 //   let regex = /^(\w+)\1+$/g
 //   return regex.test(s)
 // }
-//重复字符串, 去除首尾两个字符.
+// 重复字符串, 去除首尾两个字符.
 // 如果是子字符串构成的, 那么应该存在于重复的字符串中.
 export default function repeatedSubstringPattern (s) {
   let newstr = s.slice(1) + s.slice(0, -1)
