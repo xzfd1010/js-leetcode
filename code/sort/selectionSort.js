@@ -1,9 +1,7 @@
 export default function selectionSort (arr) {
-  let len = arr.length
-  let min // 最小值索引
-  for (let i = 0; i < len; i++) {
+  for (let i = 0, len = arr.length; i < len; i++) {
     // 将当前位置设为最小值
-    min = i
+    let min = i
     // 检查数组其余部分是否更小
     for (let j = i + 1; j < len; j++) {
       if (arr[j] < arr[min]) {
