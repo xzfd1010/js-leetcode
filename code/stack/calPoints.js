@@ -69,6 +69,7 @@
 //     return +prev + +cur
 //   }, 0)
 // }
+// 这个方法的特点是，充分利用了栈的特性
 export default function calPoints (ops) {
   let stack = []
   let pre1, pre2
