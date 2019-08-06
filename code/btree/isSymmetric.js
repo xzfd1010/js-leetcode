@@ -63,6 +63,7 @@ class Tree {
         let parent = nodeList[parentIndex]
         // 这里的判空操作不够严谨，如果元素本身就是undefined，就判断不出来了，
         // 其实可以根据索引计算出来当前节点究竟是父节点的左节点还是右节点
+        // 上面说的是错的，因为只要赋值了，node就是个对象，不会存在 undefined 的情况
         if (parent.left) {
           parent.right = node
         } else {
