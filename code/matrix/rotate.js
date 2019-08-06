@@ -58,7 +58,6 @@ export default function rotate (matrix) {
     matrix[len - i - 1] = temp
   }
 
-
   for (let i = 0; i < len; i++) {
     for (let j = i + 1; j < len; j++) {
       let temp = matrix[i][j]
