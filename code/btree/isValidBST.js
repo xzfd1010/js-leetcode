@@ -154,9 +154,6 @@ export default function isValidBST (root) {
   let walk = (node, lower = -Infinity, upper = Infinity) => {
     if (!node) return true
     let val = node.val
-    console.log('val', val)
-    console.log('lower', lower)
-    console.log('upper', upper)
     if (val <= lower || val >= upper) {
       return false
     }
