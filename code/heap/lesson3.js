@@ -17,8 +17,7 @@
 // 第 n 个超级丑数确保在 32 位有符整数范围内。
 //
 // Related Topics 堆 数学
-
-// leetcode submit region begin(Prohibit modification and deletion)
+// leetcode 未通过
 /**
  * @param {number} n
  * @param {number[]} primes
@@ -84,7 +83,6 @@ class Heap {
   }
 }
 
-// leetcode submit region end(Prohibit modification and deletion)
 class Ugly {
   constructor (n, primes) {
     this.n = n
@@ -129,7 +127,6 @@ class Ugly {
           res.push(i)
         }
       }
-
       i++
     }
     return res[this.n - 1]
