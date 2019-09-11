@@ -53,7 +53,7 @@ export const lemonadeChange = function (bills) {
   let hand = []
   while (bills.length) {
     let money = bills.shift()
-    if (money===5) {
+    if (money === 5) {
       hand.push(money)
     } else {
       // 找零的钱
