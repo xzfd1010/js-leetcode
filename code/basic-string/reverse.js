@@ -32,11 +32,11 @@
 // }
 
 // 使用正则，这个正则可以，split中使用正则
-// export default function reverseWords (s) {
-//   return s.split(/\s/g).map((word) => {
-//     return word.split('').reverse().join('')
-//   }).join(' ')
-// }
+export default function reverseWords (s) {
+  return s.split(/\s/g).map((word) => {
+    return word.split('').reverse().join('')
+  }).join(' ')
+}
 
 // 不行，因为[\w']不能匹配()<>等字符
 // export default function reverseWords (s) {
