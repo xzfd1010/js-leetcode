@@ -54,6 +54,7 @@
 // export default function hasGroupsSizeX (deck) {
 //   let str = deck.sort().join('') // 将数组按顺序变成字符串
 //   // 单张或者多张分组，并模式匹配
+//   // 正则这里不行，因为牌是有2位数的
 //   let group = str.match(/(\d)\1+|\d/g)
 //   // 两两求公约数
 //   while (group.length > 1) {
@@ -86,8 +87,10 @@ export default function hasGroupsSizeX (deck) {
     let b = group.shift().length
     let v = gcd(a, b)
     if (v === 1) {
+      // 说明某两个数没有最大公约数
       return false
     } else {
+      // 说明当前的两个数存在最大公约数，将最大公约数推入到数组的第一项
       group.unshift('0'.repeat(v).split(''))
     }
   }
